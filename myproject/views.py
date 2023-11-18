@@ -6,6 +6,7 @@ def homePage(request):
         'title':'Home Page',
         'bdata':'Welcome to my project',
         'clist':['PHP','JAVA','Python'],
+        'numbers':[10,20,30,40,50],
         'student_details':[
             {'name':'pradeep','phone':9840031339},
             {'name':'testing','phone':9840031339},
