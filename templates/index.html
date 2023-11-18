@@ -3,6 +3,27 @@
         <title>{{title}}</title>
     </head>
 <body>
-<p>Welcome to myproject</p>
+<p>{{bdata}}</p>
+
+{%for n in clist%}
+<div>Hello {{n}}</div>
+{%endfor%}
+<br/>
+<table border=""1" cellpadding="10">
+    <tr>
+        <th>Name</th>
+        <th>Phone Number</th>
+    </tr>
+
+{%for d in student_details%}
+    <tr>
+        <td>{{d.name}}</td>
+        <td>{{d.phone}}</td>
+    </tr>
+{%endfor%}
+
+
+</table>
+
 </body>
 </html>
