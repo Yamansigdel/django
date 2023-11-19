@@ -1,36 +1,82 @@
-<html> 
-    <head>
-        <title>{{title}}</title>
-    </head>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Parallex Website</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/Project3.css">
+</head>
 <body>
-<p>{{bdata}}</p>
+	<section class="pimg1">
+		<div class="ptext">
+			<span class="textbg">Parallex Webiste</span>
+		</div>
+	</section>
+	<section class="section section-light">
+		<h2>SECTION ONE</h2>
+		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam aut
+        amet odio est laborum obcaecati perferendis! Mollitia officiis,
+        consectetur vitae laborum eos expedita reprehenderit nostrum tempore.
+        Atque laborum repudiandae adipisci nihil. Natus cum sapiente culpa
+        excepturi quasi magni quibusdam ipsum accusamus laborum, numquam odit!
+        Nisi repudiandae cumque incidunt tempora explicabo vero in corporis
+        provident quidem quisquam sit, asperiores ullam placeat ut iure pariatur
+        ratione laboriosam totam amet minus. Porro, quam quisquam explicabo
+        rerum labore, tempora officia eveniet mollitia iure a fugiat, magnam at.
+        Vero magni aliquam ea molestias omnis, quia fuga architecto maiores ut
+        magnam! Culpa, cum. Blanditiis, tempore temporibus.
+    	</p>
+		
+	</section>
+	<section class="pimg2">
+		<div class="ptext">
+			<span class="textbg">EXPLORE NATURE</span>
+		</div>
+	</section>
+	<section class="section section-dark">
+		<h2>SECTION TWO</h2>
+		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam aut
+        amet odio est laborum obcaecati perferendis! Mollitia officiis,
+        consectetur vitae laborum eos expedita reprehenderit nostrum tempore.
+        Atque laborum repudiandae adipisci nihil. Natus cum sapiente culpa
+        excepturi quasi magni quibusdam ipsum accusamus laborum, numquam odit!
+        Nisi repudiandae cumque incidunt tempora explicabo vero in corporis
+        provident quidem quisquam sit, asperiores ullam placeat ut iure pariatur
+        ratione laboriosam totam amet minus. Porro, quam quisquam explicabo
+        rerum labore, tempora officia eveniet mollitia iure a fugiat, magnam at.
+        Vero magni aliquam ea molestias omnis, quia fuga architecto maiores ut
+        magnam! Culpa, cum. Blanditiis, tempore temporibus.
+    	</p>
+		
+	</section>
+	<section class="pimg3">
+		<div class="ptext">
+			<span class="textbgm"><b>LOOK, DEEP INTO NATURE</b></span>
+		</div>
+	</section>
+	<section class="section section-dark">
+		<h2>SECTION THREE</h2>
+		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam aut
+        amet odio est laborum obcaecati perferendis! Mollitia officiis,
+        consectetur vitae laborum eos expedita reprehenderit nostrum tempore.
+        Atque laborum repudiandae adipisci nihil. Natus cum sapiente culpa
+        excepturi quasi magni quibusdam ipsum accusamus laborum, numquam odit!
+        Nisi repudiandae cumque incidunt tempora explicabo vero in corporis
+        provident quidem quisquam sit, asperiores ullam placeat ut iure pariatur
+        ratione laboriosam totam amet minus. Porro, quam quisquam explicabo
+        rerum labore, tempora officia eveniet mollitia iure a fugiat, magnam at.
+        Vero magni aliquam ea molestias omnis, quia fuga architecto maiores ut
+        magnam! Culpa, cum. Blanditiis, tempore temporibus.
+    	</p>
+		
+	</section>
+	<section class="pimg1">
+		<div class="ptext">
+			<span class="textbg">DO SOME CODING</span>
+		</div>
+	</section>
 
-{%for n in clist%}
-<div>Hello {{n}}</div>
-{%endfor%}
-<br/>
-<table border=""1" cellpadding="10">
-    <tr>
-        <th>Name</th>
-        <th>Phone Number</th>
-    </tr>
 
-{%for d in student_details%}
-    <tr>
-        <td>{{d.name}}</td>
-        <td>{{d.phone}}</td>
-    </tr>
-{%endfor%}
-
-</table>
-
-{%if numbers|length > 0%}
-    {%for i in numbers%}
-        <div>{{i}}</div>
-        {%endfor%}
-{%else%}
-        No data found
-{%endif%}
 
 </body>
 </html>
