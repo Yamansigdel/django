@@ -67,14 +67,20 @@ nav ul {
   gap: 20px;
 }
 
-nav ul li {
+/* nav ul li {
   border-bottom: 2px solid transparent;
   transition: 0.2s ease-in;
+} */
+
+header .active a{
+  background-color: red;
 }
-nav ul li:hover {
+
+/* nav ul li:hover {
   border-bottom: 2px solid white;
   transition: 0.2s ease-in;
-}
+} */
+
 .hero-section {
   background-image: url(/static/img/hero_image1.png);
   min-height: 100vh;

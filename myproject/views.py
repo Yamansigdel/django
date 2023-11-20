@@ -14,11 +14,18 @@ def homePage(request):
     # }
     return render(request,"index.html")
 
-def aboutUs(request):
-    return HttpResponse("Welcome to myproject")
+def overview(request):
+    return render(request,"overview.html")
 
-def course(request):
-    return HttpResponse("Welcome to myproject1")
+def music(request):
+    return render(request,"music.html")
 
-def courseDetails(request,courseid):
-    return HttpResponse(courseid)
+def userForm(request):
+    fullname=''
+    try:
+        n1=request.GET['first_name']
+        n2=request.GET['last_name']
+        fullname=n1+' '+ n2
+    except:
+        pass
+    return render(request,"userform.html",{'output':fullname})
