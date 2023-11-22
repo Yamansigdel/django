@@ -1,5 +1,5 @@
-from django.http import HttpResponse,HttpResponseRedirect
-from django.shortcuts import render
+from django.http import HttpResponse
+from django.shortcuts import render,redirect
 
 def homePage(request):
     # data={
@@ -18,7 +18,9 @@ def overview(request):
     return render(request,"overview.html")
 
 def music(request):
-    return render(request,"music.html")
+    if request.method=="GET":
+        fullname=request.GET['fullname']
+    return render(request,"music.html",{'fullname':fullname})
 
 def userForm(request):
     fullname=''
@@ -27,6 +29,8 @@ def userForm(request):
             n1=request.POST['first_name']
             n2=request.POST['last_name']
             fullname=n1+' '+ n2
+            url='/music/?fullname={}'.format(fullname)
+            return redirect(url)
     except:
         pass
     return render(request,"userform.html",{'output':fullname})
