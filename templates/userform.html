@@ -12,7 +12,8 @@
 		<h1>User Form
 			<span class="small_title">(WEB)</span>
 		</h1>
-			<form>
+			<form method="post">
+				{% csrf_token %}
 				<div class="form_container">
 					<div class="form_control">
 						<label for="first_name">First Name: </label>

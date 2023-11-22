@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render
 
 def homePage(request):
@@ -23,9 +23,10 @@ def music(request):
 def userForm(request):
     fullname=''
     try:
-        n1=request.GET['first_name']
-        n2=request.GET['last_name']
-        fullname=n1+' '+ n2
+        if request.method=="POST":
+            n1=request.POST['first_name']
+            n2=request.POST['last_name']
+            fullname=n1+' '+ n2
     except:
         pass
     return render(request,"userform.html",{'output':fullname})
