@@ -23,5 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls,name="admin"),
     path('overview/',views.overview,name="overview"),
     path('music/',views.music,name="music"),
-    path('userform/',views.userForm,name="form")
+    path('userform/',views.userForm,name="form"),
 ]
