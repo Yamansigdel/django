@@ -48,12 +48,16 @@ def calculator(request):
     return render(request,"calculator.html",data)
 
 def evenodd(request):
-    c=''
+    c=" "
     data={}
     try:
             if request.method=="POST":
                 n1=eval(request.POST['num 1'])
-                if 
+                if (n1%2) ==0:
+                    c="Even Number"
+                else:
+                    c="Odd Number"
+
             data={
                 'n1':n1,
                 'c':c
