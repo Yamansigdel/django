@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render,redirect
+from .forms import userForms
 
 def homePage(request):
     # data={
@@ -25,14 +26,20 @@ def music(request):
 
 def userForm(request):
     fullname=''
+    fn=userForms()
+    data={'form':fn}
     try:
         if request.method=="POST":
             n1=request.POST['first_name']
             n2=request.POST['last_name']
             fullname=n1+' '+ n2
+            data={
+                'form':fn,
+                'output':fullname
+            }
             url='/music/?fullname={}'.format(fullname)
             return redirect(url)
     except:
         pass
-    return render(request,"userform.html",{'output':fullname})
+    return render(request,"userform.html",data)
 
