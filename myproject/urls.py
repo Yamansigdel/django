@@ -24,4 +24,5 @@ urlpatterns = [
     path('overview/',views.overview,name="overview"),
     path('music/',views.music,name="music"),
     path('userform/',views.userForm,name="form"),
+    path('calculator/', views.calculator,name="calculator"),
 ]
