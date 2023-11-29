@@ -19,7 +19,51 @@ def overview(request):
     return render(request,"overview.html")
 
 def calculator(request):
-    return render(request,"calculator.html")
+    c=''
+    data={}
+    try:
+            if request.method=="POST":
+                n1=eval(request.POST['num 1'])
+                n2=eval(request.POST['num 2'])
+                opr=request.POST['operator']
+                if opr=='+':
+                    c=n1+n2
+                elif opr=='-':
+                    c=n1-n2
+                elif opr=='*':
+                    c=n1*n2
+                else:
+                    c=n1/n2
+            data={
+                'n1':n1,
+                'n2':n2,
+                'opr':opr,
+                'c':c
+            }
+
+                
+    except:
+        c="Error!!!"
+
+    return render(request,"calculator.html",data)
+
+def evenodd(request):
+    c=''
+    data={}
+    try:
+            if request.method=="POST":
+                n1=eval(request.POST['num 1'])
+                if 
+            data={
+                'n1':n1,
+                'c':c
+            }
+
+                
+    except:
+        c="Error!!!"
+
+    return render(request,"evenodd.html",data)
 
 
 def music(request):

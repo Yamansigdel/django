@@ -25,4 +25,5 @@ urlpatterns = [
     path('music/',views.music,name="music"),
     path('userform/',views.userForm,name="form"),
     path('calculator/', views.calculator,name="calculator"),
+        path('evenodd/', views.evenodd),
 ]

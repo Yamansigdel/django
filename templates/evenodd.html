@@ -12,17 +12,8 @@
                 {% csrf_token %}
                 <label>Value 1</label>
                 <input type="text" name="num 1" class="form-control" value={{n1}}> 
-                <label>Select Operator</label>
-                <select name="operator" class="form-control">
-                    <option>{{opr}}</option>
-                    <option value='+'>+</option>
-                    <option value='-'>-</option>
-                    <option value='*'>*</option>
-                    <option value='/'>/</option>
-                </select>  
-                <label>Value 2</label>
-                <input type="text" name="num 2" class="form-control" value={{n2}}>  
-                <button type="submit" class="mt-2">Calculate</button></br>
+                
+                <button type="submit" class="mt-2">Check</button></br>
                 <label class="mt-2">Output</label>
                 <input type="text" name="output" class="form-control" value={{c}}> 
             </form>
