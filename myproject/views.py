@@ -18,6 +18,9 @@ def homePage(request):
 def overview(request):
     return render(request,"overview.html")
 
+def calculator(request):
+    return render(request,"calculator.html")
+
 
 def music(request):
     if request.method=="GET":
