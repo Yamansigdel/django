@@ -71,9 +71,7 @@ def evenodd(request):
 
 
 def music(request):
-    if request.method=="GET":
-        fullname=request.GET['fullname']
-    return render(request,"music.html",{'fullname':fullname})
+    return render(request,"music.html")
 
 def userForm(request):
     fullname=''
