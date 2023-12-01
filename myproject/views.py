@@ -2,12 +2,14 @@ from django.http import HttpResponse
 from django.shortcuts import render,redirect
 from .forms import userForms
 from service.models import Service
+from news.models import News
 
 def homePage(request):
-
+    newsData=News.objects.all()
     servicesData=Service.objects.all()[:1]
     data={
-        'servicesData':servicesData
+        'servicesData':servicesData,
+        'newsData':newsData
     }
     #print(len(servicesData))
     # data={

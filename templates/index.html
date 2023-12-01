@@ -1,6 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+<marquee>
+{%for news in newsData%}
+{{news.news_title}}
+{%endfor%}
+</marquee>
+
     <main>
       <section class="hero-section">
         <div class="container">
