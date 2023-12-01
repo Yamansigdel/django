@@ -24,6 +24,7 @@ def homePage(request):
     # }
     return render(request,"index.html",data)
 
+
 def overview(request):
     return render(request,"overview.html")
 
@@ -81,6 +82,13 @@ def evenodd(request):
 
 def music(request):
     return render(request,"music.html")
+
+def news(request,newsid):
+    newsDetails=News.objects.get(id=newsid)
+    data={
+        'newsDetails':newsDetails
+    }
+    return render(request, "news.html",data)
 
 def userForm(request):
     fullname=''
