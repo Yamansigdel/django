@@ -5,8 +5,11 @@ from service.models import Service
 
 def homePage(request):
 
-    servicesData=Service.objects.all()
-
+    servicesData=Service.objects.all()[:1]
+    data={
+        'servicesData':servicesData
+    }
+    #print(len(servicesData))
     # data={
     #     'title':'Home Page',
     #     'bdata':'Welcome to my project',
@@ -17,7 +20,7 @@ def homePage(request):
     #         {'name':'testing','phone':9840031339},
     #     ]
     # }
-    return render(request,"index.html")
+    return render(request,"index.html",data)
 
 def overview(request):
     return render(request,"overview.html")
@@ -90,8 +93,8 @@ def userForm(request):
                 'form':fn,
                 'output':fullname
             }
-            url='/music/?fullname={}'.format(fullname)
-            return redirect(url)
+            #url='/music/?fullname={}'.format(fullname)
+            #return redirect(url)
     except:
         pass
     return render(request,"userform.html",data)

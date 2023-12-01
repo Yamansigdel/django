@@ -4,8 +4,10 @@
     <main>
       <section class="hero-section">
         <div class="container">
-          <h1>my Tunes</h1>
-          <h3>Your music, movies, and TV shows take center stage.</h3>
+          {%for i in servicesData%}
+          <h1>{{i.service_title}}</h1>
+          <h3>{{i.service_des | safe}}</h3>
+          {% endfor %}
           <p>
             myTunes is the best way to organize and enjoy the music, movies, and
             TV shows you already have — and shop for the ones you want. Enjoy
