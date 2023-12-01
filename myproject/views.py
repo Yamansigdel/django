@@ -1,8 +1,12 @@
 from django.http import HttpResponse
 from django.shortcuts import render,redirect
 from .forms import userForms
+from service.models import Service
 
 def homePage(request):
+
+    servicesData=Service.objects.all()
+
     # data={
     #     'title':'Home Page',
     #     'bdata':'Welcome to my project',
