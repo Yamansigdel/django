@@ -11,7 +11,7 @@ def homePage(request):
         'servicesData':servicesData,
         'newsData':newsData
     }
-    #print(len(servicesData))
+    #print(len(newsData))
     # data={
     #     'title':'Home Page',
     #     'bdata':'Welcome to my project',
