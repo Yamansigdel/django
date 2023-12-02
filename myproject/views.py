@@ -3,10 +3,12 @@ from django.shortcuts import render,redirect
 from .forms import userForms
 from service.models import Service
 from news.models import News
+from django.core.paginator import Paginator
 
 def homePage(request):
     newsData=News.objects.all()
-    servicesData=Service.objects.all()[:1]
+    servicesData=Service.objects.all()
+    paginator=Paginator(servicesData,1)
     data={
         'servicesData':servicesData,
         'newsData':newsData
