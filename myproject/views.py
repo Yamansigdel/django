@@ -15,7 +15,8 @@ def homePage(request):
     data={
         'servicesData':servicesDatafinal,
         'newsData':newsData,
-        'last_page':total_pages
+        'last_page':total_pages,
+        'totalpagelist':[n+1 for n in range(total_pages)]
     }
     #print(len(newsData))
     # data={

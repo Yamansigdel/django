@@ -129,11 +129,9 @@
           <a class="page-link" href="/?page={{servicesData.previous_page_number}}">Previous</a>
         </li>
         {%endif%}
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item ">
-          <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        {%for n in totalpagelist %}
+        <li class="page-item"><a class="page-link" href="/?page={{n}}">{{n}}</a></li>
+        {%endfor%}
         {%if servicesData.has_next%}
         <li class="page-item">
           <a class="page-link" href="/?page={{servicesData.next_page_number}}">Next</a>
