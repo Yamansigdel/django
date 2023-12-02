@@ -9,9 +9,13 @@ def homePage(request):
     newsData=News.objects.all()
     servicesData=Service.objects.all()
     paginator=Paginator(servicesData,1)
+    page_number=request.GET.get('page')
+    servicesDatafinal=paginator.get_page(page_number)
+    total_pages=servicesDatafinal.paginator.num_pages
     data={
-        'servicesData':servicesData,
-        'newsData':newsData
+        'servicesData':servicesDatafinal,
+        'newsData':newsData,
+        'last_page':total_pages
     }
     #print(len(newsData))
     # data={
