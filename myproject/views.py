@@ -83,8 +83,8 @@ def evenodd(request):
 def music(request):
     return render(request,"music.html")
 
-def news(request,newsid):
-    newsDetails=News.objects.get(id=newsid)
+def news(request,slug):
+    newsDetails=News.objects.get(news_slug=slug)
     data={
         'newsDetails':newsDetails
     }
