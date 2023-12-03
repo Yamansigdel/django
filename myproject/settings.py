@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'service',
     'tinymce',
     'news',
-    'Contactenquire'
+    'Contact',
 ]
 
 MIDDLEWARE = [

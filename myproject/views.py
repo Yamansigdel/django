@@ -4,6 +4,7 @@ from .forms import userForms
 from service.models import Service
 from news.models import News
 from django.core.paginator import Paginator
+from Contact.models import Contactenquire
 
 def homePage(request):
     newsData=News.objects.all()
@@ -103,9 +104,13 @@ def userForm(request):
     data={'form':fn}
     try:
         if request.method=="POST":
+            email=request.POST.get('Email')
+            city=request.POST.get('city')
             n1=request.POST['first_name']
             n2=request.POST['last_name']
             fullname=n1+' '+ n2
+            en=Contactenquire(email=email,city=city)
+            en.save()
             data={
                 'form':fn,
                 'output':fullname
