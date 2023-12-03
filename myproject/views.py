@@ -5,8 +5,27 @@ from service.models import Service
 from news.models import News
 from django.core.paginator import Paginator
 from Contact.models import Contactenquire
+from django.core.mail import send_mail,EmailMultiAlternatives
 
 def homePage(request):
+    # subject='Testing Mail'
+    # from_email='yamansigdel999@gmail.com'
+    # msg='<p>Welcome to <b>Yaman</b></p>'
+    # to='yamunasigdel09@gmail.com'
+    # msg=EmailMultiAlternatives(subject,msg,from_email,[to])
+    # msg.content_subtype='html'
+    # msg.send()
+
+
+
+#     send_mail(
+#     'Testing Mail',
+#     'Here is the message',
+#     'yamansigdel999@gmail.com',
+#     ['yamunasigdel09@gmail.com'],
+#     fail_silently=False,
+# )
+    
     newsData=News.objects.all()
     servicesData=Service.objects.all()
     paginator=Paginator(servicesData,1)
