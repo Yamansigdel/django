@@ -2,9 +2,22 @@
 
 {%block content%}
 
-<P><center>{{newsDetails.news_title}}</P></center><br>
+<div class="col-lg-6 col-md-12 pt-2">
+    <P><center>{{newsDetails.news_title}}</P></center><br>
+</div>
+<div class="row">
+    <div class="col-6">
+        {% if newsDetails.news_image != NULL %}
+        <img src="/media/{{newsDetails.news_image}}" class="img-fluid pb-2  mx-auto" style="width: 200px;">
+        {% endif %}
+    </div>
+    <div class="col-lg-6 col-md-12">
+        <div class="bg-white p-5">
+            {{newsDetails.news_desc | safe}}
+        </div>
+    </div>
+</div>
 
-<P><center>{{newsDetails.news_desc | safe}}</P></center><br>
 
 
 {%endblock%}
