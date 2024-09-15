@@ -19,11 +19,11 @@
   <body>
     <header>
       <nav class="container">
-        <div class="logo">myTunes</div>
+        <a href="{% url 'homePage' %}"><div class="logo">myTunes</div></a>
 
         <ul>
           <li class="{% if request.path == '/overview/' %} active {% endif %}"><a href="{% url 'overview' %}">Overview</a></li>
-          <li class="{% if request.path == '/music/' %} active {% endif %}"><a href="{% url 'music' %}">Music</a></li>
+          <li><a href="{% url 'music' %}">Music</a></li>
           <li><a href="#video">Video</a></li>
           <li><a href="#gift">Gift</a></li>
           

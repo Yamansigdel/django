@@ -21,7 +21,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', views.homePage),
+    path('', views.homePage, name='homePage'),
     path('admin/', admin.site.urls,name="admin"),
     path('overview/',views.overview,name="overview"),
     path('music/',views.music,name="music"),
