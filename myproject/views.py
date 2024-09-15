@@ -3,6 +3,7 @@ from django.shortcuts import render,redirect
 from .forms import userForms
 from service.models import Service
 from news.models import News
+from overview.models import Overview
 from django.core.paginator import Paginator
 from Contact.models import Contactenquire
 from django.core.mail import send_mail,EmailMultiAlternatives
@@ -28,9 +29,9 @@ def homePage(request):
     
     newsData=News.objects.all()
     servicesData=Service.objects.all()
-    paginator=Paginator(servicesData,1)
-    page_number=request.GET.get('page')
-    servicesDatafinal=paginator.get_page(page_number)
+    paginator=Paginator(servicesData,1) #page lai paginate grna, 1 means 1 record in a page is there
+    page_number=request.GET.get('page') #determine which page of Servicedata should be rendered, notmentioned--> default 
+    servicesDatafinal=paginator.get_page(page_number) #retrieves page according to pg no.
     total_pages=servicesDatafinal.paginator.num_pages
     data={
         'servicesData':servicesDatafinal,
@@ -53,7 +54,11 @@ def homePage(request):
 
 
 def overview(request):
-    return render(request,"overview.html")
+
+    ovr=Overview.objects.all()
+    dict={'ovr':ovr}
+
+    return render(request,"overview.html",dict)
 
 def calculator(request):
     c=''
