@@ -10,6 +10,10 @@
           <div class="col-12 mx-auto mt-5 mb-5">
             <form method="post">
                 {% csrf_token %}
+
+                {% if error %}
+                <div class="alert alert-danger" role="alert">Please Enter The Value</div>
+                {% endif %}
                 <label>Value 1</label>
                 <input type="text" name="num 1" class="form-control" value="{{n1}}"> 
                 

@@ -93,17 +93,21 @@ def evenodd(request):
     c=" "
     data={}
     try:
+            
             if request.method=="POST":
+                if request.POST.get('num 1')=="":
+                    return render(request,"evenodd.html", {'error':True})
+                
                 n1=eval(request.POST['num 1'])
                 if (n1%2) ==0:
                     c="Even Number"
                 else:
                     c="Odd Number"
 
-            data={
-                'n1':n1,
-                'c':c
-            }
+                data={
+                    'n1':n1,
+                    'c':c
+                }
 
                 
     except:
